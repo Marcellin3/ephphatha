@@ -6,11 +6,7 @@ const nav = [
   { label: "Accueil", href: "/" },
   {
     label: "Apropos",
-    href: "/apropos",
-    children: [
-      { label: "Impact et resultats", href: "/impact" },
-      { label: "Partenaires", href: "/partenaires" },
-    ],
+    href: "/apropos", 
   },
   { label: "Nos programmes", href: "/programmes" },
   {
@@ -59,7 +55,7 @@ export function SiteHeader() {
             <Link className="secondary-btn hidden sm:inline-flex" href="/contact">
               Contact
             </Link>
-            <Link className="primary-btn" href="/don">
+            <Link className="primary-btn" href="/programmes#don">
               Faire un don
             </Link>
           </div>

@@ -1,51 +1,149 @@
 import Image from "next/image";
 import { PageHero } from "../components/PageHero";
-import { photos } from "../site-data";
+import { objectives, photos,news, partners, programs  } from "../site-data";
+import Link from "next/link";
 
 export default function AproposPage() {
   return (
     <main>
+      {/* Hero section untouched */}
       <PageHero
         eyebrow="A propos"
         title="Une institution pionniere au service de la dignite humaine."
         text="Cree le 15 janvier 1958 par le Dr Andrew Foster, le Centre Ephphatha accompagne les personnes sourdes de Goma dans toutes les dimensions de leur parcours."
         image={photos.facilitator}
       />
+
+      {/* Redesigned Biography Section: Portrait on the Left, Text on the Right */}
       <section className="section bg-white">
         <div className="section-grid">
-          <div className="image-panel">
-            <Image src={photos.logo} alt="Logo CISG" fill className="object-contain p-10" />
+          {/* Founder's Photo on the Left */}
+          <div className="relative aspect-[4/5] w-full max-w-[360px] mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+            <Image
+              src="/photos/andrew_foster.png"
+              alt="Dr. Andrew Foster"
+              fill
+              className="object-cover"
+            />
           </div>
-          <div className="space-y-6 text-slate-700">
-            <p>
-              Le Centre Ephphatha pour Sourds de Goma est ne d&apos;une vision : rendre l&apos;education, la communication,
-              l&apos;accompagnement social et la participation communautaire accessibles aux personnes vivant avec un
-              handicap auditif.
+
+          {/* Biography Text on the Right */}
+          <div className="space-y-6 text-slate-700 flex flex-col justify-center">
+            <h2 className="text-3xl font-black text-slate-900 leading-tight">Notre Histoire</h2>
+            <p className="text-base text-slate-600 leading-relaxed">
+              Le Centre Éphphatha pour Sourds de Goma (CESG Asbl) est une organisation sans but lucratif enregistrée en République Démocratique du Congo, dédiée à l’accompagnement, l’éducation et l’inclusion des personnes sourdes et malentendantes.
             </p>
-            <div className="grid gap-4 md:grid-cols-2">
-              <article className="info-block">
-                <h3>Mission</h3>
-                <p>
-                  Contribuer a l&apos;epanouissement integral des personnes vivant avec un handicap auditif en leur offrant
-                  un accompagnement educatif, professionnel, medical, social et spirituel adapte.
-                </p>
-              </article>
-              <article className="info-block">
-                <h3>Vision</h3>
-                <p>
-                  Construire une societe inclusive ou les personnes sourdes beneficient des memes opportunites que tous
-                  les citoyens.
-                </p>
-              </article>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {["Inclusion", "Respect", "Dignite humaine", "Solidarite", "Equite", "Excellence", "Engagement spirituel"].map(
+            <p className="text-base text-slate-600 leading-relaxed">
+              Fondé le 15 janvier 1958 à l’initiative du missionnaire américain Dr Andrew Foster, Directeur général de la mission chrétienne pour sourds de Michigan aux Etats-Unis d’Amérique ET pionnier de l’éducation des sourds en Afrique, le centre œuvre depuis plusieurs décennies pour offrir des opportunités éducatives, sociales et humaines aux personnes vivant avec une déficience auditive.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-4">
+              {["Inclusion", "Respect", "Dignité humaine", "Solidarité", "Équité", "Excellence", "Engagement spirituel"].map(
                 (value) => (
                   <span key={value} className="pill">
                     {value}
                   </span>
                 ),
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Objectives Section from Home */}
+      <section className="objectives-section" aria-labelledby="objectives-heading">
+        <div className="objectives-layout">
+          <div className="objectives-intro">
+            <h2 className="objectives-brand">Objectifs</h2>
+            <p className="text-2xl">
+              Le Centre Ephphatha a pour objectif principal de promouvoir l&apos;epanouissement integral des personnes
+              vivant avec handicap auditif a travers leur integration sociale, economique, spirituelle, educative et
+              scientifique.
+            </p>
+          </div>
+          <div className="objectives-grid">
+            {objectives.map((item, index) => (
+              <article key={item.title} className={`objective-card${index === 0 ? " is-active" : ""}`}>
+                <h3>{item.title}</h3>
+                <p className="objective-card-caption">{item.caption}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section from Home */}
+      <section className="section mission-band">
+        <div className="mission-layout">
+          <div className="mission-visual-overlapping">
+            <div className="mission-image-top">
+              <Image
+                src={photos.assembly}
+                alt="Assemblée au Centre Ephphatha"
+                fill
+                sizes="(min-width: 1024px) 35vw, 70vw"
+              />
+            </div>
+            <div className="mission-image-bottom">
+              <Image
+                src={photos.signingMan}
+                alt="Apprentissage de la langue des signes"
+                fill
+                sizes="(min-width: 1024px) 40vw, 80vw"
+                priority
+              />
+            </div>
+            <div className="mission-slogan-card">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/photos/signe.png"
+                  alt="Communication Langue des Signes"
+                  fill
+                  sizes="(min-width: 1024px) 15vw, 30vw"
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mission-copy">
+            <span className="mission-kicker">Mission & Vision</span>
+            <h2 className="mission-title">Notre engagement pour l&apos;inclusion et l&apos;autonomie.</h2>
+            <div className="mission-text-stack">
+              <article className="mission-text-block">
+                <h3>Notre Mission</h3>
+                <p>
+                  Accompagner chaque personne sourde vers son épanouissement intégral en offrant un encadrement
+                  éducatif, professionnel, médical, social et spirituel adapté à ses besoins.
+                </p>
+              </article>
+              <article className="mission-text-block">
+                <h3>Notre Vision</h3>
+                <p>
+                  Bâtir une société inclusive où la surdité n&apos;est plus un obstacle à la dignité, au respect des
+                  droits et à l&apos;autonomie de chaque individu.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="section-heading-row">
+            <div>
+              <h2 className="text-2xl">Partenaires</h2>
+              <h3 className="text-xl">Des allies pour amplifier l&apos;impact du centre.</h3>
+            </div>
+          </div>
+          <div className="partner-carousel" aria-label="Carrousel des partenaires">
+            <div className="partner-track">
+              {[...partners, ...partners].map((partner, index) => (
+                <Link key={`${partner.name}-${index}`} className="partner-logo" href="/partenaires">
+                  <Image src={partner.image} alt={`Logo ${partner.name}`} width={220} height={120} />
+                  <span>{partner.name}</span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
