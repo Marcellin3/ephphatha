@@ -167,31 +167,6 @@ export default function Home() {
 
       <section className="section bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <p className="eyebrow">Nos programmes</p>
-          <h2>Des parcours complets, de l&apos;ecole a l&apos;autonomie.</h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {programs.slice(0, 3).map((program) => (
-              <article key={program.title} className="program-card">
-                <Image src={program.image} alt="" width={900} height={520} className="program-img" />
-                <div className="p-5">
-                  <h3>{program.title}</h3>
-                  <ul>
-                    {program.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
-          <Link className="primary-btn mt-8" href="/programmes">
-            Voir tous les programmes
-          </Link>
-        </div>
-      </section>
-
-      <section className="section bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="home-news-layout">
             <div className="home-news-copy">
               <h2>Nos dernieres actualites</h2>

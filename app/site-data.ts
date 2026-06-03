@@ -10,7 +10,7 @@ export const photos = {
 
 export const programs = [
   {
-    title: "Scolarisation",
+    title: "Education",
     image: photos.assembly,
     items: ["Ecole primaire", "Humanites", "Enseignement specialise"],
   },
