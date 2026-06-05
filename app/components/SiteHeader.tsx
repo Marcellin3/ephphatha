@@ -10,7 +10,7 @@ const nav = [
   },
   { label: "Nos programmes", href: "/programmes", 
     children: [
-      { label: "impact", href: "/ImpactPage" },
+      { label: "impact", href: "/impact" },
     ],
   },
   {
