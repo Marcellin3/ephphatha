@@ -69,7 +69,7 @@ export default function Footer() {
               </Link>
 
               <p className="mt-5 max-w-xl text-pretty leading-relaxed text-gray-600">
-                Depuis 1958, le Centre Ephphatha accompagne les personnes vivant avec un handicap auditif a travers
+                Depuis 1985, le Centre Ephphatha accompagne les personnes vivant avec un handicap auditif a travers
                 l&apos;education, l&apos;insertion sociale, la sante et la formation professionnelle.
               </p>
 
@@ -121,7 +121,7 @@ export default function Footer() {
               <ul className="space-y-3 text-gray-600">
                 <li>
                   <Link className="footer-text-link" href="/programmes">
-                    Scolarisation
+                    Education
                   </Link>
                 </li>
                 <li>

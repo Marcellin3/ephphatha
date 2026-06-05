@@ -34,7 +34,7 @@ export default function AproposPage() {
               Le Centre Éphphatha pour Sourds de Goma (CESG Asbl) est une organisation sans but lucratif enregistrée en République Démocratique du Congo, dédiée à l’accompagnement, l’éducation et l’inclusion des personnes sourdes et malentendantes.
             </p>
             <p className="text-base text-slate-600 leading-relaxed">
-              Fondé le 15 janvier 1958 à l’initiative du missionnaire américain Dr Andrew Foster, Directeur général de la mission chrétienne pour sourds de Michigan aux Etats-Unis d’Amérique ET pionnier de l’éducation des sourds en Afrique, le centre œuvre depuis plusieurs décennies pour offrir des opportunités éducatives, sociales et humaines aux personnes vivant avec une déficience auditive.
+              Fondé le 15 janvier 1985 à l’initiative du missionnaire américain Dr Andrew Foster, Directeur général de la mission chrétienne pour sourds de Michigan aux Etats-Unis d’Amérique ET pionnier de l’éducation des sourds en Afrique, le centre œuvre depuis plusieurs décennies pour offrir des opportunités éducatives, sociales et humaines aux personnes vivant avec une déficience auditive.
             </p>
             <div className="flex flex-wrap gap-2 pt-4">
               {["Inclusion", "Respect", "Dignité humaine", "Solidarité", "Équité", "Excellence", "Engagement spirituel"].map(

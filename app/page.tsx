@@ -17,7 +17,7 @@ export default function Home() {
             <p className="hero-badge">CESG ASBL - Goma, Nord-Kivu</p>
             <h1>Ensemble pour l&apos;inclusion et l&apos;autonomisation des personnes sourdes</h1>
             <p className="hero-lead">
-              Depuis 1958, le Centre Ephphatha accompagne les enfants, les jeunes et les adultes sourds de Goma vers
+              Depuis 1985, le Centre Ephphatha accompagne les enfants, les jeunes et les adultes sourds de Goma vers
               une vie digne, autonome et inclusive.
             </p>
             <div className="hero-actions">
@@ -49,7 +49,7 @@ export default function Home() {
             <span className="soft-badge">A propos de nous</span>
             <h2>Nos services sont concus pour offrir le meilleur accompagnement inclusif.</h2>
             <p>
-              Depuis 1958, le Centre Ephphatha accompagne les enfants, les jeunes et les adultes sourds de Goma avec
+              Depuis 1985, le Centre Ephphatha accompagne les enfants, les jeunes et les adultes sourds de Goma avec
               des services educatifs, sociaux, medicaux, professionnels et spirituels adaptes a chaque personne.
             </p>
             <div className="about-actions">
