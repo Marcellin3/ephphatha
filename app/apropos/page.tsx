@@ -10,7 +10,7 @@ export default function AproposPage() {
       <PageHero
         eyebrow="A propos"
         title="Une institution pionniere au service de la dignite humaine."
-        text="Cree le 15 janvier 1958 par le Dr Andrew Foster, le Centre Ephphatha accompagne les personnes sourdes de Goma dans toutes les dimensions de leur parcours."
+        text="Cree le 15 janvier 1985 par le Dr Andrew Foster, le Centre Ephphatha accompagne les personnes sourdes de Goma dans toutes les dimensions de leur parcours."
         image={photos.facilitator}
       />
 
@@ -18,9 +18,9 @@ export default function AproposPage() {
       <section className="section bg-white">
         <div className="section-grid">
           {/* Founder's Photo on the Left */}
-          <div className="relative aspect-[4/5] w-full max-w-[360px] mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+          <div className="relative aspect-[4/5] w-full max-w-[360px] mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
             <Image
-              src="/photos/andrew_foster.png"
+              src="/photos/fondateur.png"
               alt="Dr. Andrew Foster"
               fill
               className="object-cover"

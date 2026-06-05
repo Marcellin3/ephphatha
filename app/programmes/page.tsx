@@ -16,6 +16,7 @@ import {
   MapPin,
   Mail,
 } from "lucide-react";
+import { PageHero } from "../components/PageHero";
 
 const programMeta = [
   {
