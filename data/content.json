@@ -1,13 +1,59 @@
 {
-  "articles": [
+  "articles": [],
+  "photos": [
     {
-      "category": "Santé",
-      "title": "Sensibilisation sur la santé sexuelle et de la reproduction des jeunes filles sourdes",
-      "date": "2026-07-21",
-      "image": "https://chatgpt.com/codex/open-app?source=login&app_brand=chatgpt",
-      "summary": "\tLes soins médicaux et psychosociaux\nLe centre dispose d’un service médical spécialisé offrant des soins gratuits aux personnes sourdes, notamment à travers les services d’audiologie, de counselling et de logopédie pour la prise en charge des troubles auditifs, psychologiques et du langage. Il assure également des services de santé sexuelle et reproductive (SSR), comprenant des séances de sensibilisation et d’éducation, le conseil en santé reproductive, la planification familiale, la prévention et la prise en charge des infections sexuellement transmissibles (IST), ainsi que l’accompagnement des adolescents, des jeunes et des adultes dans la promotion de leur santé sexuelle et reproductive, dans le respect de leurs besoins spécifiques.\n",
-      "id": "c89fee0f-5724-4c2d-a08e-615e447461f4"
+      "title": "IMG 9188",
+      "category": "Événements",
+      "src": "/uploads/2cdbef12-eee2-42df-b18e-25480e68c304.jpeg",
+      "id": "4dc90d56-bc5a-4634-8162-d283b570addf"
+    },
+    {
+      "title": "IMG 9187",
+      "category": "Événements",
+      "src": "/uploads/39b5910c-3ae7-42b2-8d97-0562a40d0a6e.jpeg",
+      "id": "3a894da9-1bb5-49a8-906e-96c6c3ea832c"
+    },
+    {
+      "title": "IMG 9186",
+      "category": "Événements",
+      "src": "/uploads/6fb52641-ea2e-463c-9fee-b87bd0733e14.jpeg",
+      "id": "128478c7-75cd-4599-9eca-9b8c123e32cf"
+    },
+    {
+      "title": "IMG 9203 1",
+      "category": "Événements",
+      "src": "/uploads/d1921892-1156-4e1b-b287-0b4310e2ddd9.jpeg",
+      "id": "5999664b-2fb5-4d36-b531-2f2462636f83"
+    },
+    {
+      "title": "IMG 9203",
+      "category": "Événements",
+      "src": "/uploads/3cd68154-85ea-4ec3-bb4b-126a1aa64759.jpeg",
+      "id": "9ede5a22-011f-468c-b44d-b4f73d4e7dd0"
+    },
+    {
+      "title": "IMG 9202",
+      "category": "Événements",
+      "src": "/uploads/9e1fd843-3ec3-4469-be28-ac157f3a7ac8.jpeg",
+      "id": "015e307f-71f5-4b93-a87e-559055d15edb"
+    },
+    {
+      "title": "IMG 9193",
+      "category": "Événements",
+      "src": "/uploads/0854634b-04ae-41f2-b7a5-27dffcb0a0d2.jpeg",
+      "id": "699020e9-387c-4fcb-8609-b25fbd67702c"
+    },
+    {
+      "title": "IMG 9192",
+      "category": "Événements",
+      "src": "/uploads/2de227de-f113-4c37-b728-0d34fcdec7c6.jpeg",
+      "id": "50d47763-11a7-4519-89c8-81e629bc520a"
+    },
+    {
+      "title": "IMG 9191",
+      "category": "Événements",
+      "src": "/uploads/010166c9-0a7e-4de5-98a0-be3e80de5460.jpeg",
+      "id": "02e23c00-955c-41b3-bbc5-d71f9aa4c852"
     }
-  ],
-  "photos": []
+  ]
 }

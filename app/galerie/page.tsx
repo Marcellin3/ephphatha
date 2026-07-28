@@ -14,6 +14,7 @@ export default function GaleriePage() {
     () => allGallery.filter((item) => filter === "Tous" || item.category === filter),
     [filter, allGallery],
   );
+  const galleryCategories = useMemo(() => ["Tous", ...Array.from(new Set(allGallery.map((item) => item.category)))], [allGallery]);
   useEffect(() => { fetch("/api/content").then((response) => response.json()).then((content) => setAllGallery([...content.photos, ...gallery])).catch(() => undefined); }, []);
 
   // Group items into 4 columns for masonry layout on desktop
@@ -53,7 +54,7 @@ export default function GaleriePage() {
                 value={filter}
                 onChange={(event) => setFilter(event.target.value)}
               >
-                {["Tous", "Ecole", "Langue des signes", "Inclusion", "Sensibilisations", "Temoignages", "Activites spirituelles"].map(
+                {galleryCategories.map(
                   (category) => (
                     <option key={category} value={category}>{category}</option>
                   ),
@@ -76,7 +77,7 @@ export default function GaleriePage() {
                   return (
                     <button
                       key={item.title}
-                      className={`group relative w-full overflow-hidden rounded-2xl bg-white border border-slate-200/80 shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-orange-500/30 text-left focus:outline-none focus:ring-2 focus:ring-orange-500/40 ${aspectStyle}`}
+                      className={`group relative w-full overflow-hidden rounded-2xl bg-white border border-slate-200/80 shadow-sm transition-[transform,box-shadow,border-color] duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-orange-500/30 text-left focus:outline-none focus:ring-2 focus:ring-orange-500/40 ${aspectStyle}`}
                       onClick={() => setSelectedImage(item)}
                     >
                       {/* Photo */}
@@ -97,7 +98,7 @@ export default function GaleriePage() {
 
           {/* Empty State */}
           {filteredGallery.length === 0 && (
-            <div className="text-center py-20 bg-white rounded-3xl border border-slate-200 shadow-sm">
+            <div className="text-center py-20 bg-white rounded-xl border border-slate-200 shadow-sm">
               <p className="text-slate-400 font-semibold text-lg">Aucune image disponible pour cette catégorie.</p>
             </div>
           )}

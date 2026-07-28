@@ -5,11 +5,11 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-20">
+    <footer className="relative mt-12 sm:mt-16">
       <div className="container relative z-30 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-[1.75rem] bg-[#138cc4] shadow-[0_24px_70px_rgba(0,91,150,0.26)]">
-          <div className="grid items-center gap-8 p-5 sm:p-6 lg:grid-cols-2 lg:p-8">
-            <div className="relative hidden min-h-64 justify-center lg:flex">
+          <div className="grid items-center gap-5 p-4 sm:p-5 lg:grid-cols-2 lg:gap-6 lg:p-7">
+            <div className="relative hidden min-h-52 justify-center lg:flex">
               <Image
                 src="/photos/letter.png"
                 alt="Centre Ephphatha"
@@ -24,16 +24,16 @@ export default function Footer() {
                 Centre Ephphatha
               </span>
 
-              <h2 className="mt-4 text-balance text-lg font-bold leading-tight text-white sm:text-2xl">
+              <h2 className="mt-3 text-balance text-lg font-bold leading-tight text-white sm:text-2xl">
                 Ensemble pour l&apos;inclusion des personnes sourdes
               </h2>
 
-              <p className="mt-4 max-w-xl text-pretty leading-7 text-blue-50">
+              <p className="mt-3 max-w-xl text-pretty leading-6 text-blue-50 sm:leading-7">
                 Recevez nos actualites, projets et opportunites de soutien aux enfants, jeunes et adultes sourds de
                 Goma.
               </p>
 
-              <form className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <form className="mt-5 flex flex-col gap-2 sm:flex-row">
                 <input
                   type="email"
                   placeholder="Votre adresse email"
@@ -49,9 +49,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="-mt-8 bg-[#f4eef7] pt-20 shadow-[0_-20px_60px_rgba(15,23,42,0.06)]">
-        <div className="container mx-auto px-6 py-10">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+      <div className="-mt-5 bg-[#f4eef7] pt-14 shadow-[0_-20px_60px_rgba(15,23,42,0.06)] sm:-mt-6 sm:pt-16">
+        <div className="container mx-auto px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10">
             <div className="lg:col-span-2">
               <Link href="/" className="flex w-fit items-center gap-3">
                 <Image
@@ -68,12 +68,12 @@ export default function Footer() {
                 </div>
               </Link>
 
-              <p className="mt-5 max-w-xl text-pretty leading-relaxed text-gray-600">
+              <p className="mt-4 max-w-xl text-pretty leading-relaxed text-gray-600">
                 Depuis 1985, le Centre Ephphatha accompagne les personnes vivant avec un handicap auditif a travers
                 l&apos;education, l&apos;insertion sociale, la sante et la formation professionnelle.
               </p>
 
-              <div className="mt-6 flex gap-3">
+              <div className="mt-5 flex gap-3">
                 <a href="#" className="footer-social-link" aria-label="Facebook">
                   <FaFacebookF size={18} />
                 </a>
@@ -89,9 +89,9 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="mb-5 font-bold">A propos</h4>
+              <h4 className="mb-3 font-bold">A propos</h4>
 
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-1.5 text-gray-600">
                 <li>
                   <Link className="footer-text-link" href="/apropos">
                     Notre histoire
@@ -116,9 +116,9 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="mb-5 font-bold">Programmes</h4>
+              <h4 className="mb-3 font-bold">Programmes</h4>
 
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-1.5 text-gray-600">
                 <li>
                   <Link className="footer-text-link" href="/programmes">
                     Education
@@ -143,9 +143,9 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="mb-5 font-bold">Contact</h4>
+              <h4 className="mb-3 font-bold">Contact</h4>
 
-              <ul className="space-y-4 text-gray-600">
+              <ul className="space-y-2.5 text-gray-600">
                 <li className="flex gap-2">
                   <MapPin size={18} className="mt-0.5 shrink-0" />
                   <span>Goma, Nord-Kivu, RDC</span>
@@ -168,7 +168,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-black/10 pt-6 md:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-black/10 pt-5 md:flex-row">
             <p className="text-pretty text-sm text-gray-500">
               &copy; 2026 Centre Ephphatha pour Sourds de Goma (CISG ASBL). Tous droits reserves.
             </p>

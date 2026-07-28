@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { photos, programs } from "../site-data";
@@ -16,6 +16,10 @@ import {
   Info,
   MapPin,
   Mail,
+  Construction,
+  MessageCircle,
+  Phone,
+  X,
 } from "lucide-react";
 import { PageHero } from "../components/PageHero";
 
@@ -136,6 +140,13 @@ const inspiringWomen = [
   }
 ];
 
+const donationContact = {
+  director: "Directeur du Centre CESG",
+  phone: "+243 997 674 407",
+  whatsapp: "243997674407",
+  email: "contact@ephphatha.org",
+};
+
 export default function ProgrammesPage() {
   // Donation states
   const [amount, setAmount] = useState<number>(99);
@@ -146,13 +157,20 @@ export default function ProgrammesPage() {
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [donationDialogOpen, setDonationDialogOpen] = useState(false);
 
   const handleDonateSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setDonationDialogOpen(true);
   };
 
   const currentSelectedAmount = isCustomAmount ? (Number(customAmount) || 0) : amount;
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && setDonationDialogOpen(false);
+    if (donationDialogOpen) window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [donationDialogOpen]);
 
   return (
     <main className="min-h-screen bg-slate-50/30">
@@ -685,6 +703,46 @@ export default function ProgrammesPage() {
           </div>
         </div>
       </section>
+      <DonationAvailabilityDialog open={donationDialogOpen} onClose={() => setDonationDialogOpen(false)} />
     </main>
+  );
+}
+
+function DonationAvailabilityDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-[90] grid place-items-center bg-slate-950/70 p-4 backdrop-blur-sm" role="presentation" onMouseDown={onClose}>
+      <section
+        className="w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-2xl animate-[donation-dialog-in_180ms_cubic-bezier(0.2,0,0,1)]"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="donation-dialog-title"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-4 bg-[#005B96] p-5 text-white sm:p-7">
+          <div className="flex items-start gap-3">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/15"><Construction aria-hidden="true" /></span>
+            <div><p className="text-xs font-bold uppercase tracking-widest text-blue-100">Information importante</p><h2 id="donation-dialog-title" className="mt-1 text-xl font-black sm:text-2xl">🚧 Système de don en cours de développement</h2></div>
+          </div>
+          <button type="button" onClick={onClose} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 transition-[background-color,transform] hover:bg-white/20 active:scale-[0.96]" aria-label="Fermer la fenêtre"><X aria-hidden="true" /></button>
+        </div>
+        <div className="p-5 sm:p-7">
+          <p className="text-pretty leading-7 text-slate-600">Merci pour votre volonté de soutenir le Centre CESG. Nous travaillons actuellement à l&apos;intégration d&apos;une plateforme de paiement en ligne sécurisée afin de faciliter les dons. Cette fonctionnalité n&apos;est pas encore disponible.</p>
+          <p className="mt-4 text-pretty leading-7 text-slate-600">En attendant, nous vous invitons à contacter directement la Direction du Centre CESG pour effectuer votre contribution ou obtenir toutes les informations nécessaires.</p>
+          <section className="mt-6 rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200 sm:p-5" aria-label="Coordonnées de la Direction">
+            <p className="text-xs font-black uppercase tracking-widest text-[#005B96]">Coordonnées de la Direction</p>
+            <div className="mt-4 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+              <p className="flex items-center gap-2 font-bold sm:col-span-2"><Construction className="h-4 w-4 text-[#F7941D]" aria-hidden="true" />{donationContact.director}</p>
+              <a href={`tel:${donationContact.phone.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:text-[#005B96]"><Phone className="h-4 w-4 text-[#F7941D]" aria-hidden="true" />{donationContact.phone}</a>
+              <a href={`mailto:${donationContact.email}`} className="flex items-center gap-2 break-all hover:text-[#005B96]"><Mail className="h-4 w-4 text-[#F7941D]" aria-hidden="true" />{donationContact.email}</a>
+            </div>
+          </section>
+          <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+            <button type="button" onClick={onClose} className="inline-flex min-h-11 items-center justify-center rounded-xl border border-slate-300 px-5 font-bold text-slate-700 transition-[background-color,transform] hover:bg-slate-50 active:scale-[0.96]">Fermer</button>
+            <a href={`https://wa.me/${donationContact.whatsapp}?text=${encodeURIComponent("Bonjour, je souhaite obtenir des informations pour effectuer un don au Centre CESG.")}`} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 font-bold text-slate-950 transition-[background-color,transform] hover:bg-[#20bd5a] active:scale-[0.96]"><MessageCircle className="h-5 w-5" aria-hidden="true" />Contacter par WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

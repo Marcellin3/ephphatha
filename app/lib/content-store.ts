@@ -72,3 +72,12 @@ export async function addGalleryPhoto(photo: Omit<GalleryPhoto, "id">) {
   await writeContent(content);
   return saved;
 }
+
+export async function deleteGalleryPhoto(id: string) {
+  const content = await readContent();
+  const initialLength = content.photos.length;
+  content.photos = content.photos.filter((photo) => photo.id !== id);
+  if (content.photos.length === initialLength) return false;
+  await writeContent(content);
+  return true;
+}
