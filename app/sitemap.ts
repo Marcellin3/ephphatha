@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getArticles } from "./lib/articles";
 
 const sections = [
   "",
@@ -12,13 +13,15 @@ const sections = [
   "#contact",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ephphatha.org";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = "https://ephphatha.com";
 
-  return sections.map((section) => ({
+  const sectionEntries = sections.map((section) => ({
     url: `${baseUrl}/${section}`,
     lastModified: new Date(),
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: section === "" ? 1 : 0.8,
   }));
+  const articleEntries = (await getArticles()).map((article) => ({ url: `${baseUrl}/actualites/${article.slug}`, lastModified: article.updatedAt || article.publishedAt, changeFrequency: "monthly" as const, priority: 0.7 }));
+  return [...sectionEntries, ...articleEntries];
 }

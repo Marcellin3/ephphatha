@@ -10,6 +10,7 @@ import {
   Users,
   HeartPulse,
   Heart,
+  ShieldCheck,
   ArrowRight,
   Check,
   Info,
@@ -54,6 +55,13 @@ const programMeta = [
     accent: "border-violet-500",
     hoverBg: "hover:border-violet-200 hover:shadow-violet-100/30",
   },
+  {
+    icon: ShieldCheck,
+    color: "text-teal-600 bg-teal-50 border-teal-100",
+    badge: "bg-teal-50 text-teal-700 ring-teal-600/10",
+    accent: "border-teal-500",
+    hoverBg: "hover:border-teal-200 hover:shadow-teal-100/30",
+  },
 ];
 
 const programDescriptions: Record<string, string> = {
@@ -61,8 +69,72 @@ const programDescriptions: Record<string, string> = {
   "Formation professionnelle": "Développer le savoir-faire technique et artisanal des jeunes pour favoriser leur insertion professionnelle et leur autonomie financière.",
   "Integration sociale": "Accompagner les familles et sensibiliser la communauté pour faire valoir les droits des sourds et briser l'isolement.",
   "Sante et accompagnement psychosocial": "Proposer un soutien thérapeutique, de la logopédie, de l'audiologie et un accompagnement psychologique de qualité.",
-  "Encadrement spirituel": "Nourrir la vie morale, culturelle et spirituelle à travers des chorales, des études et des moments de partage adaptés."
+  "Encadrement spirituel": "Nourrir la vie morale, culturelle et spirituelle à travers des chorales, des études et des moments de partage adaptés.",
+  "Santé sexuelle et reproductive (SSR)": "Proposer des séances de sensibilisation et d’éducation, le conseil en santé reproductive, la planification familiale, la prévention et la prise en charge des IST, ainsi qu’un accompagnement respectueux des besoins spécifiques des adolescents, jeunes et adultes."
 };
+
+const inspiringWomen = [
+  {
+    name: "Mama YALALA Mercianne",
+    role: "Directrice d'école primaire",
+    image: "/ptotos galerie/DSC_0019.jpg",
+    desc: "Une leader exceptionnelle, totalement dévouée au développement des enfants sourds. Elle dirige l'école primaire avec bienveillance, veille à la vie spirituelle de son équipe et soutient activement l'évolution de l'école secondaire d'Ephphatha."
+  },
+  {
+    name: "RIZIKI Adela",
+    role: "Enseignante",
+    image: "/ptotos galerie/DSC_0020.jpg",
+    desc: "Ayant surmonté les défis de l'orphelinat et de la surdité, elle prouve que la vie en harmonie est possible. Enseignante dévouée, elle contribue au développement intellectuel et moral des enfants au sein de l'école primaire."
+  },
+  {
+    name: "KAHAMBU Chantal",
+    role: "Enseignante",
+    image: "/ptotos galerie/DSC_0021.jpg",
+    desc: "Enseignante courageuse, elle aide les parents à comprendre que la surdité n'est pas une malédiction, mais une œuvre de Dieu. Mère célibataire, elle assume ses responsabilités avec force malgré les épreuves passées."
+  },
+  {
+    name: "FURAHA Dina",
+    role: "Enseignante à l'EP Neema Ephphatha",
+    image: "/ptotos galerie/DSC_0022.jpg",
+    desc: "Malgré la perte de ses parents, elle a su forger son propre chemin. Enseignante à l'EP NEEMA EPHPHATHA, elle contribue par son travail à la stabilité de son foyer, formant un couple béni avec son époux."
+  },
+  {
+    name: "MONGI Francine",
+    role: "Enseignante",
+    image: "/ptotos galerie/DSC_0023.jpg",
+    desc: "Une figure fascinante qui enseigne à l'EP NEEMA EPHPHATHA et s'investit profondément dans la communauté religieuse, notamment auprès des jeunes filles et des enfants n'ayant pas encore maîtrisé la langue des signes."
+  },
+  {
+    name: "Mme KAKURU Nenette",
+    role: "Secrétaire & Interprète",
+    image: "/ptotos galerie/DSC_0024.jpg",
+    desc: "Secrétaire dévouée et infatigable, elle apporte un soutien précieux au centre Ephphatha. Interprète compétente, elle est un pilier pour les femmes et pour le suivi des activités du centre."
+  },
+  {
+    name: "MASIKA Desange",
+    role: "Formatrice en coupe et couture",
+    image: "/ptotos galerie/DSC_0025.jpg",
+    desc: "Formatrice en coupe et couture, elle a su transformer son talent en un moyen de construire un avenir pour sa famille. Son cœur généreux l'a poussée à adopter un enfant, démontrant une force de caractère exemplaire."
+  },
+  {
+    name: "MOKE DANIELLA",
+    role: "Instructrice en alphabétisation",
+    image: "/ptotos galerie/DSC_0026.jpg",
+    desc: "Ancienne élève du centre, elle y travaille aujourd'hui comme instructrice en alphabétisation. Engagée dans son église et son foyer, elle incarne la réussite et l'épanouissement."
+  },
+  {
+    name: "SOUVERENE",
+    role: "Superviseuse en coupe & couture",
+    image: "/ptotos galerie/DSC_0028.jpg",
+    desc: "Qualifiée en coupe et couture, elle supervise les élèves tout en aidant activement les apprenants dans leur apprentissage du métier."
+  },
+  {
+    name: "ALICE ZABIBU",
+    role: "Enseignante spécialisée",
+    image: "/ptotos galerie/DSC_0029.jpg",
+    desc: "Enseignante passionnée par l'éducation des sourds, elle illustre parfaitement que l'intégration entre personnes sourdes et entendantes est à la fois simple et enrichissante."
+  }
+];
 
 export default function ProgrammesPage() {
   // Donation states
@@ -85,7 +157,7 @@ export default function ProgrammesPage() {
   return (
     <main className="min-h-screen bg-slate-50/30">
       {/* Premium Full-Width Slider Hero Section */}
-      <section className="relative min-h-[75vh] flex items-center bg-slate-950 text-white overflow-hidden">
+      <section className="relative min-h-[75vh] flex items-center bg-slate-700 text-white overflow-hidden">
         {/* Background slideshow images with fading animations */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -108,7 +180,7 @@ export default function ProgrammesPage() {
             className="hero-image hero-c object-cover opacity-0"
           />
           {/* Black overlay to guarantee readability of white text */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-8 py-24">
@@ -123,7 +195,7 @@ export default function ProgrammesPage() {
               </h1>
               
               {/* Left Accent Border Paragraph Container */}
-              <div className="mt-8 border-l-4 border-orange-500 pl-6 max-w-2xl">
+              <div className="mt-8 max-w-2xl">
                 <p className="text-lg text-slate-200 leading-relaxed font-medium">
                   Chaque programme est conçu pour soutenir l&apos;autonomie, la communication bilatérale et la participation active des enfants, jeunes et adultes sourds de Goma.
                 </p>
@@ -185,7 +257,7 @@ export default function ProgrammesPage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl font-black text-slate-900 sm:text-4xl tracking-tight">
-              Nos 5 domaines d&apos;intervention majeurs
+              Nos 6 domaines d&apos;intervention majeurs
             </h2>
             <p className="mt-4 text-base text-slate-500">
               Découvrez en détail les parcours d&apos;accompagnement que nous déployons pour favoriser l&apos;épanouissement de la communauté.
@@ -546,6 +618,70 @@ export default function ProgrammesPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Inspiring Portraits Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200/60">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <span className="text-xs font-bold text-orange-500 uppercase tracking-widest block mb-2">
+              Des Parcours de Vie qui Inspirent
+            </span>
+            <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl leading-tight">
+              Portraits des Femmes du Centre Ephphatha
+            </h2>
+            <p className="mt-4 text-base text-slate-500 leading-relaxed">
+              Découvrez les histoires courageuses de ces femmes exceptionnelles qui, par leur dévouement, leur passion et leur persévérance, façonnent chaque jour l&apos;avenir et l&apos;inclusion au sein du centre.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {inspiringWomen.map((woman) => (
+              <div 
+                key={woman.name} 
+                className="group bg-white rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                {/* Photo Header */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src={woman.image}
+                    alt={woman.name}
+                    fill
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-60" />
+                  
+                  {/* Badge Role */}
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center rounded-full bg-white/95 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-slate-800 ring-1 ring-slate-950/5 shadow-sm">
+                      {woman.role}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-lg font-black text-slate-900 leading-snug group-hover:text-orange-500 transition-colors duration-300">
+                      {woman.name}
+                    </h3>
+                    <div className="w-8 h-1 bg-orange-500/80 rounded-full mt-3 mb-4" />
+                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                      {woman.desc}
+                    </p>
+                  </div>
+
+                  {/* Footer Decoration */}
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                    <span>Centre Ephphatha</span>
+                    <span className="text-orange-500/80">Inspiration &bull; Force</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

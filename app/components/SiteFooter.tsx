@@ -24,7 +24,7 @@ export default function Footer() {
                 Centre Ephphatha
               </span>
 
-              <h2 className="mt-4 text-balance text-2xl font-bold leading-tight text-white sm:text-3xl">
+              <h2 className="mt-4 text-balance text-lg font-bold leading-tight text-white sm:text-2xl">
                 Ensemble pour l&apos;inclusion des personnes sourdes
               </h2>
 

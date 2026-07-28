@@ -1,7 +1,34 @@
 import Image from "next/image";
 import { PageHero } from "../components/PageHero";
-import { objectives, photos,news, partners, programs  } from "../site-data";
+import { objectives, photos, news, partners, programs } from "../site-data";
 import Link from "next/link";
+
+const teamMembers = [
+  {
+    name: "Directeur du CESG",
+    role: "Direction CESG",
+    image: photos.facilitator,
+    desc: "Assure la gestion globale, la coordination des programmes et le développement des partenariats du CESG.",
+  },
+  {
+    name: "Préfet d'étude secondaire",
+    role: "Enseignement Secondaire",
+    image: photos.signingMan,
+    desc: "Supervise le parcours scolaire des élèves sourds du secondaire et leur préparation à l&apos;insertion sociale.",
+  },
+  {
+    name: "Directrice d'école primaire",
+    role: "Enseignement Primaire",
+    image: photos.signingWoman,
+    desc: "Pilote l'ecole primaire;apprentissage de base bilingue (langue des signes et français) pour les enfants dès le jeune âge.",
+  },
+  {
+    name: "Médecin directeur du centre de santé CESG",
+    role: "Soins & Audiologie",
+    image: photos.communityWoman,
+    desc: "Dirige les soins de santé de base, les dépistages de l&apos;audition et l&apos;orientation clinique des patients.",
+  },
+];
 
 export default function AproposPage() {
   return (
@@ -53,8 +80,8 @@ export default function AproposPage() {
       <section className="objectives-section" aria-labelledby="objectives-heading">
         <div className="objectives-layout">
           <div className="objectives-intro">
-            <h2 className="objectives-brand">Objectifs</h2>
-            <p className="text-2xl">
+            <h2 id="objectives-heading" className="objectives-brand">Objectifs</h2>
+            <p className="objectives-lead">
               Le Centre Ephphatha a pour objectif principal de promouvoir l&apos;epanouissement integral des personnes
               vivant avec handicap auditif a travers leur integration sociale, economique, spirituelle, educative et
               scientifique.
@@ -124,6 +151,41 @@ export default function AproposPage() {
                 </p>
               </article>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Notre Équipe Section */}
+      <section className="section bg-slate-50 border-t border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="section-heading-row mb-10">
+            <div>
+              <h2 className="text-2xl">Notre Équipe</h2>
+              <h3 className="text-xl">Les visages derrière notre engagement au quotidien.</h3>
+            </div>
+          </div>
+          
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {teamMembers.map((member) => (
+              <article key={member.name} className="team-card bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col gap-4">
+                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-100">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 40vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <span className="inline-flex items-center rounded-full bg-orange-50 px-2.5 py-0.5 text-xs font-semibold text-orange-600 ring-1 ring-orange-600/10">
+                    {member.role}
+                  </span>
+                  <h3 className="text-base font-bold text-slate-900 mt-2 leading-snug">{member.name}</h3>
+                  <p className="text-xs text-slate-500 mt-2 leading-relaxed font-semibold">{member.desc}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

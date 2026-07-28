@@ -1,53 +1,18 @@
-"use client";
-
-import Image from "next/image";
-import { useMemo, useState } from "react";
+import { NewsFeed } from "../components/NewsFeed";
 import { PageHero } from "../components/PageHero";
-import { news, photos } from "../site-data";
+import { getArticles } from "../lib/articles";
+import { photos } from "../site-data";
 
-export default function ActualitesPage() {
-  const [filter, setFilter] = useState("Tous");
-  const filteredNews = useMemo(() => news.filter((item) => filter === "Tous" || item.category === filter), [filter]);
+export default async function ActualitesPage() {
+  const articles = await getArticles();
 
   return (
     <main>
-      <PageHero
-        eyebrow="Actualites"
-        title="La vie du centre, les evenements et les temoignages."
-        text="Un espace pour publier les avancees du CISG ASBL et sensibiliser le public a la cause des personnes sourdes."
-        image={photos.communityWoman}
-      />
-      <section className="section bg-white">
+      <PageHero eyebrow="Actualités" title="La vie du centre, les événements et les témoignages." text="Un espace pour suivre les avancées du CISG ASBL et sensibiliser le public à la cause des personnes sourdes." image={photos.communityWoman} />
+      <section className="section news-section" aria-labelledby="news-heading">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="eyebrow">Blog dynamique</p>
-              <h2>Articles classes par thematique.</h2>
-            </div>
-            <select
-              className="field max-w-xs"
-              value={filter}
-              onChange={(event) => setFilter(event.target.value)}
-              aria-label="Filtrer les actualites"
-            >
-              {["Tous", "Education", "Sante", "Inclusion", "Evenements", "Temoignages"].map((category) => (
-                <option key={category}>{category}</option>
-              ))}
-            </select>
-          </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {filteredNews.map((item) => (
-              <article key={item.title} className="content-card overflow-hidden p-0">
-                <Image src={item.image} alt="" width={900} height={520} className="program-img" />
-                <div className="p-5">
-                  <span className="tag">{item.category}</span>
-                  <h3>{item.title}</h3>
-                  <p className="text-sm font-semibold text-slate-500">{item.date}</p>
-                  <p>{item.summary}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <h1 id="news-heading" className="sr-only">Toutes les actualités</h1>
+          <NewsFeed articles={articles} />
         </div>
       </section>
     </main>

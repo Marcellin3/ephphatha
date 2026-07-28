@@ -192,7 +192,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-300 font-bold">Téléphone (Hotline) :</div>
-                      <div className="text-xs font-bold mt-0.5">+243 999 123 456</div>
+                      <div className="text-xs font-bold mt-0.5">+243 997 674 407</div>
                     </div>
                   </div>
 
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-300 font-bold">SMS / WhatsApp :</div>
-                      <div className="text-xs font-bold mt-0.5">+243 812 345 678</div>
+                      <div className="text-xs font-bold mt-0.5">+243 901 143 004</div>
                     </div>
                   </div>
 

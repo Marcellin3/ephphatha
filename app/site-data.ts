@@ -34,6 +34,17 @@ export const programs = [
     image: photos.expressiveSign,
     items: ["Chorales", "Etudes bibliques", "Formation des leaders spirituels"],
   },
+  {
+    title: "Santé sexuelle et reproductive (SSR)",
+    image: photos.facilitator,
+    items: [
+      "Sensibilisation et éducation",
+      "Conseil en santé reproductive",
+      "Planification familiale",
+      "Prévention et prise en charge des IST",
+      "Accompagnement des adolescents, jeunes et adultes",
+    ],
+  },
 ];
 
 export const news = [
@@ -68,12 +79,32 @@ export const news = [
 ];
 
 export const gallery = [
-  { category: "Ecole", title: "Assemblee de sensibilisation", src: photos.assembly },
+  { category: "Ecole", title: "Assemblée de sensibilisation", src: photos.assembly },
   { category: "Langue des signes", title: "Expression et apprentissage", src: photos.signingWoman },
   { category: "Inclusion", title: "Intervention communautaire", src: photos.signingMan },
   { category: "Sensibilisations", title: "Dialogue avec les familles", src: photos.facilitator },
   { category: "Temoignages", title: "Communication en langue des signes", src: photos.expressiveSign },
   { category: "Activites spirituelles", title: "Participation communautaire", src: photos.communityWoman },
+  {
+    category: "Inclusion",
+    title: "Intégration et activités partagées au centre",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczOFIo0b24yF0m9VC_WhJV_lBmDerq5NRtot5ZkFh5V3LlLHmjVFsU0EB4AEeTbJgQZjjX5JJhVgT9Na21qqX3EYKy249qTS_qdUAsRxXNs0x9qEr3M=w1200-p-k"
+  },
+  {
+    category: "Ecole",
+    title: "Séance d'apprentissage bilingue",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczMabHmEcuHIJnhmxkpbebSaKrUdzY3DGL_dBzHwqLUxLCspLuEN14xFEV_XJudKPmeriyHVk8EJD0wmH1rLCwxRoD3r0xHEEAoKola2GrMxQH45DSQ=w1200-p-k"
+  },
+  {
+    category: "Sensibilisations",
+    title: "Échange avec les membres de la communauté",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczOqiZq2D9Tue-4GXPDFIQqbCoQdDH4Y7fsJXYnepKCwggWFI-gsGuocvy2-ygl3EfQWnc3DaExMkLr5T0_8nZMCnfTlH44LVAav5U2VH9zm1G4MMSE=w1200-p-k"
+  },
+  {
+    category: "Langue des signes",
+    title: "Cours d'apprentissage des signes",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczOHA7r8PmKO9PiDw7QHLh-RlDHkep52P16PHAy0ZZuzLlM0sed2086sBTB5Md4n0a4l-vFgNJOCHx81ttF1seMnn_NnJg6_TYTTWN3JJ165LTnsfPI=w1200-p-k"
+  }
 ];
 
 export const objectives = [
@@ -115,9 +146,8 @@ export const partners = [
 ];
 
 export const stats = [
-  { value: "1958", label: "Année de fondation" },
+  { value: "1985", label: "Année de fondation" },
   { value: "65+", label: "Professionnels & éducateurs" },
   { value: "100%", label: "Engagement pour l'inclusion" },
   { value: "4", label: "Domaines d'intervention" },
 ];
-

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Centre Ephphatha pour Sourds de Goma",
     description:
-      "Depuis 1958, le CISG ASBL accompagne les enfants, jeunes et adultes sourds de Goma vers une vie digne et autonome.",
+      "Depuis 1985, le CISG ASBL accompagne les enfants, jeunes et adultes sourds de Goma vers une vie digne et autonome.",
     type: "website",
     locale: "fr_CD",
   },

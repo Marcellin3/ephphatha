@@ -67,8 +67,8 @@ export default function Home() {
       <section className="objectives-section" aria-labelledby="objectives-heading">
         <div className="objectives-layout">
           <div className="objectives-intro">
-            <h2 className="objectives-brand">Objectifs</h2>
-            <p className="text-2xl">
+            <h1 id="objectives-heading texte-2xl" className="objectives-brand">Objectifs</h1>
+            <p className="objectives-lead">
               Le Centre Ephphatha a pour objectif principal de promouvoir l&apos;epanouissement integral des personnes
               vivant avec handicap auditif a travers leur integration sociale, economique, spirituelle, educative et
               scientifique.
