@@ -162,7 +162,7 @@ export default function Footer() {
 
                 <li className="flex gap-2">
                   <Mail size={18} className="mt-0.5 shrink-0" />
-                  <span>contact@ephphatha.org</span>
+                  <span>ephphatha@gmail.com</span>
                 </li>
               </ul>
             </div>

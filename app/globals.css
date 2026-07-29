@@ -1497,6 +1497,29 @@ h3 {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* Hero Programmes : une image socle reste toujours visible pendant les fondus. */
+.program-hero-base {
+  z-index: 0;
+  opacity: 1;
+  transform: scale(1.015);
+}
+
+.program-hero-slide {
+  z-index: 1;
+  opacity: 0;
+  animation: programHeroFade 18s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: opacity, transform;
+}
+
+.program-hero-slide-b { animation-delay: 0s; }
+.program-hero-slide-c { animation-delay: 6s; }
+
+@keyframes programHeroFade {
+  0%, 8% { opacity: 0; transform: scale(1.015); }
+  16%, 42% { opacity: 1; transform: scale(1.05); }
+  50%, 100% { opacity: 0; transform: scale(1.075); }
+}
+
 @media (min-width: 768px) {
   .news-toolbar { flex-direction: row; align-items: end; }
   .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1536,6 +1559,11 @@ h3 {
 .admin-gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem; }.admin-gallery-grid article { position: relative; aspect-ratio: 1 / .82; overflow: hidden; border-radius: .7rem; background: #e8f1f7; }.admin-gallery-grid article > img { object-fit: cover; transition: transform 220ms ease; }.admin-gallery-grid article:hover > img { transform: scale(1.04); }.admin-gallery-grid article > div { position: absolute; right: 0; bottom: 0; left: 0; display: grid; gap: .12rem; padding: .7rem; background: linear-gradient(transparent, rgba(8,33,59,.88)); color: #fff; }.admin-gallery-grid span { color: #d7ebf7; font-size: .65rem; font-weight: 750; }.admin-gallery-grid strong { overflow: hidden; font-size: .78rem; text-overflow: ellipsis; white-space: nowrap; }.admin-gallery-grid button { position: absolute; top: .45rem; right: .45rem; display: grid; width: 2.25rem; height: 2.25rem; place-items: center; border-radius: 999px; background: rgba(8,33,59,.8); color: #fff; opacity: 0; transition: opacity 180ms ease, transform 180ms ease; }.admin-gallery-grid article:hover button,.admin-gallery-grid button:focus-visible { opacity: 1; }.admin-gallery-grid button:active { transform: scale(.96); }.admin-gallery-grid svg { width: 1rem; }
 @media (min-width: 768px) { .admin-shell { grid-template-columns: 14.5rem minmax(0,1fr); }.admin-sidebar { position: sticky; top: 0; height: 100vh; }.admin-header { flex-direction: row; align-items: end; }.admin-fields { grid-template-columns: repeat(2,minmax(0,1fr)); }.admin-field.full { grid-column: 1 / -1; } }
 @media (min-width: 1100px) { .admin-editor-layout { grid-template-columns: minmax(0,1fr) 17rem; }.admin-aside { position: sticky; top: 5rem; } }
+
+.gallery-filter-bar { display: grid; gap: 1rem; margin-bottom: 2.5rem; border-radius: 1.5rem; background: #fff; padding: clamp(1rem, 3vw, 2rem); box-shadow: 0 16px 40px rgba(15,23,42,.07); }
+.gallery-filter-search { display: flex; min-height: 3.7rem; align-items: center; gap: .7rem; border: 1px solid #dce6ef; border-radius: 1.15rem; padding: 0 .95rem; color: #7790a7; }.gallery-filter-search:focus-within { border-color: #f7941d; box-shadow: 0 0 0 3px rgba(247,148,29,.15); }.gallery-filter-search svg { width: 1.3rem; height: 1.3rem; }.gallery-filter-search input { width: 100%; border: 0; outline: 0; color: #1f334d; font-size: .96rem; font-weight: 650; }.gallery-filter-search input::placeholder { color: #94a3b8; }
+.gallery-filter-options { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; border-top: 1px solid #edf1f5; padding-top: 1rem; }.gallery-filter-label { display: inline-flex; align-items: center; gap: .45rem; color: #60758c; font-weight: 850; }.gallery-filter-label svg,.gallery-reset svg { width: 1rem; height: 1rem; }.gallery-filter-options select { min-height: 2.85rem; max-width: 100%; border: 1px solid #dce6ef; border-radius: .85rem; background: #fff; padding: 0 .8rem; color: #263b55; font-weight: 750; }.gallery-reset { display: inline-flex; min-height: 2.75rem; align-items: center; gap: .4rem; color: #55708a; font-size: .85rem; font-weight: 850; transition: color 180ms ease, transform 180ms ease; }.gallery-reset:hover { color: #005b96; }.gallery-reset:active { transform: scale(.96); }.gallery-results { margin-left: auto; color: #8497aa; font-size: .85rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+@media (min-width: 768px) { .gallery-filter-bar { gap: 1.35rem; }.gallery-filter-options { padding-top: 1.35rem; } }
 
 @media (min-width: 768px) {
   .section-heading-row {

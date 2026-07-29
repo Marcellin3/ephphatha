@@ -81,61 +81,61 @@ const inspiringWomen = [
   {
     name: "Mama YALALA Mercianne",
     role: "Directrice d'école primaire",
-    image: "/ptotos galerie/DSC_0019.jpg",
+    image: "/photos/YALALA.jpg",
     desc: "Une leader exceptionnelle, totalement dévouée au développement des enfants sourds. Elle dirige l'école primaire avec bienveillance, veille à la vie spirituelle de son équipe et soutient activement l'évolution de l'école secondaire d'Ephphatha."
   },
   {
     name: "RIZIKI Adela",
     role: "Enseignante",
-    image: "/ptotos galerie/DSC_0020.jpg",
+    image: "/photos/RIZIKI Adela.jpg",
     desc: "Ayant surmonté les défis de l'orphelinat et de la surdité, elle prouve que la vie en harmonie est possible. Enseignante dévouée, elle contribue au développement intellectuel et moral des enfants au sein de l'école primaire."
   },
   {
     name: "KAHAMBU Chantal",
     role: "Enseignante",
-    image: "/ptotos galerie/DSC_0021.jpg",
+    image: "/photos/KAHAMBU Chantal.jpg",
     desc: "Enseignante courageuse, elle aide les parents à comprendre que la surdité n'est pas une malédiction, mais une œuvre de Dieu. Mère célibataire, elle assume ses responsabilités avec force malgré les épreuves passées."
   },
   {
     name: "FURAHA Dina",
     role: "Enseignante à l'EP Neema Ephphatha",
-    image: "/ptotos galerie/DSC_0022.jpg",
+    image: "/photos/FURAHA Dina.jpg",
     desc: "Malgré la perte de ses parents, elle a su forger son propre chemin. Enseignante à l'EP NEEMA EPHPHATHA, elle contribue par son travail à la stabilité de son foyer, formant un couple béni avec son époux."
   },
   {
     name: "MONGI Francine",
     role: "Enseignante",
-    image: "/ptotos galerie/DSC_0023.jpg",
+    image: "/photos/MONGI  Francine.jpg",
     desc: "Une figure fascinante qui enseigne à l'EP NEEMA EPHPHATHA et s'investit profondément dans la communauté religieuse, notamment auprès des jeunes filles et des enfants n'ayant pas encore maîtrisé la langue des signes."
   },
   {
     name: "Mme KAKURU Nenette",
     role: "Secrétaire & Interprète",
-    image: "/ptotos galerie/DSC_0024.jpg",
+    image: "/photos/Mrs. KAKURU Nenette.jpg",
     desc: "Secrétaire dévouée et infatigable, elle apporte un soutien précieux au centre Ephphatha. Interprète compétente, elle est un pilier pour les femmes et pour le suivi des activités du centre."
   },
   {
     name: "MASIKA Desange",
     role: "Formatrice en coupe et couture",
-    image: "/ptotos galerie/DSC_0025.jpg",
+    image: "/photos/MASIKA Desange.JPG",
     desc: "Formatrice en coupe et couture, elle a su transformer son talent en un moyen de construire un avenir pour sa famille. Son cœur généreux l'a poussée à adopter un enfant, démontrant une force de caractère exemplaire."
   },
   {
     name: "MOKE DANIELLA",
     role: "Instructrice en alphabétisation",
-    image: "/ptotos galerie/DSC_0026.jpg",
+    image: "/photos/MOKE DANIELLA.jpg",
     desc: "Ancienne élève du centre, elle y travaille aujourd'hui comme instructrice en alphabétisation. Engagée dans son église et son foyer, elle incarne la réussite et l'épanouissement."
   },
   {
     name: "SOUVERENE",
     role: "Superviseuse en coupe & couture",
-    image: "/ptotos galerie/DSC_0028.jpg",
+    image: "/photos/SOUVERENE.jpg",
     desc: "Qualifiée en coupe et couture, elle supervise les élèves tout en aidant activement les apprenants dans leur apprentissage du métier."
   },
   {
     name: "ALICE ZABIBU",
     role: "Enseignante spécialisée",
-    image: "/ptotos galerie/DSC_0029.jpg",
+    image: "/photos/ALICE ZABIBU.jpg",
     desc: "Enseignante passionnée par l'éducation des sourds, elle illustre parfaitement que l'intégration entre personnes sourdes et entendantes est à la fois simple et enrichissante."
   }
 ];
@@ -175,7 +175,7 @@ export default function ProgrammesPage() {
   return (
     <main className="min-h-screen bg-slate-50/30">
       {/* Premium Full-Width Slider Hero Section */}
-      <section className="relative min-h-[75vh] flex items-center bg-slate-700 text-white overflow-hidden">
+      <section className="relative flex min-h-[75vh] items-center overflow-hidden bg-[#005b96] text-white">
         {/* Background slideshow images with fading animations */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -183,25 +183,25 @@ export default function ProgrammesPage() {
             alt=""
             fill
             priority
-            className="hero-image hero-a object-cover opacity-40"
+            className="program-hero-base object-cover"
           />
           <Image
             src={photos.signingWoman}
             alt=""
             fill
-            className="hero-image hero-b object-cover opacity-0"
+            className="program-hero-slide program-hero-slide-b object-cover"
           />
           <Image
             src={photos.communityWoman}
             alt=""
             fill
-            className="hero-image hero-c object-cover opacity-0"
+            className="program-hero-slide program-hero-slide-c object-cover"
           />
-          {/* Black overlay to guarantee readability of white text */}
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+          {/* Voile bleu permanent : le texte reste lisible sans flash noir entre les images. */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#003b63]/90 via-[#005b96]/68 to-[#062a46]/42" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-8 py-24">
+        <div className="relative z-8 mx-auto w-full max-w-7xl px-4 lg:px-8 py-14">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-9 text-left">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-500/20 px-3 py-1 text-xs font-bold text-orange-300 ring-1 ring-orange-500/30">
@@ -526,7 +526,7 @@ export default function ProgrammesPage() {
                       <input
                         type="email"
                         required
-                        placeholder="Ex: john.doe@mail.com"
+                        placeholder="Ex: marcellin@example.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-xs font-semibold text-slate-900 focus:border-orange-500 focus:outline-none transition-colors"
@@ -627,11 +627,11 @@ export default function ProgrammesPage() {
                 <div className="flex flex-col gap-2.5 text-xs font-semibold text-slate-600">
                   <div className="flex items-start gap-2.5">
                     <MapPin className="h-4 w-4 shrink-0 text-orange-500 mt-0.5" />
-                    <span>Av. Andrew Foster, Goma, Nord-Kivu, RD Congo</span>
+                    <span>Av. des ecole,Q. le volcan, Goma, Nord-Kivu, RD Congo</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <Mail className="h-4 w-4 shrink-0 text-orange-500 mt-0.5" />
-                    <span>ephphathagoma@gmail.com</span>
+                    <span>ephphatha@gmail.com</span>
                   </div>
                 </div>
               </div>
@@ -662,7 +662,7 @@ export default function ProgrammesPage() {
                 className="group bg-white rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Photo Header */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                <div className="relative aspect-[4/4] w-full overflow-hidden bg-slate-100">
                   <Image
                     src={woman.image}
                     alt={woman.name}

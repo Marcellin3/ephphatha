@@ -116,7 +116,7 @@ export default function ContactPage() {
                       <input
                         type="email"
                         required
-                        placeholder="john.doe@example.com"
+                        placeholder="marcellin@example.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full rounded-2xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-xs font-semibold text-slate-900 focus:border-[#0d2a4a] focus:bg-white focus:outline-none transition-all"
@@ -214,7 +214,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-300 font-bold">E-mail :</div>
-                      <div className="text-xs font-bold mt-0.5 truncate max-w-[170px]">contact@ephphathagoma.org</div>
+                      <div className="text-xs font-bold mt-0.5 truncate max-w-[170px]">ephphatha@gmail.com</div>
                     </div>
                   </div>
                 </div>

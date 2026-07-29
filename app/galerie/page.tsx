@@ -2,18 +2,22 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import { Filter, RotateCcw, Search } from "lucide-react";
 import { PageHero } from "../components/PageHero";
 import { gallery, photos } from "../site-data";
 
 export default function GaleriePage() {
   const [filter, setFilter] = useState("Tous");
+  const [query, setQuery] = useState("");
+  const [sort, setSort] = useState("recent");
   const [allGallery, setAllGallery] = useState(gallery);
   const [selectedImage, setSelectedImage] = useState<(typeof gallery)[number] | null>(null);
 
-  const filteredGallery = useMemo(
-    () => allGallery.filter((item) => filter === "Tous" || item.category === filter),
-    [filter, allGallery],
-  );
+  const filteredGallery = useMemo(() => {
+    const normalizedQuery = query.trim().toLocaleLowerCase("fr");
+    const filtered = allGallery.filter((item) => (filter === "Tous" || item.category === filter) && (!normalizedQuery || `${item.title} ${item.category}`.toLocaleLowerCase("fr").includes(normalizedQuery)));
+    return sort === "az" ? [...filtered].sort((a, b) => a.title.localeCompare(b.title, "fr")) : filtered;
+  }, [filter, allGallery, query, sort]);
   const galleryCategories = useMemo(() => ["Tous", ...Array.from(new Set(allGallery.map((item) => item.category)))], [allGallery]);
   useEffect(() => { fetch("/api/content").then((response) => response.json()).then((content) => setAllGallery([...content.photos, ...gallery])).catch(() => undefined); }, []);
 
@@ -37,31 +41,29 @@ export default function GaleriePage() {
       
       <section className="section">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          {/* Header & Filter Row */}
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end border-b border-slate-200 pb-8 mb-10">
+          <div className="mb-8">
             <div>
               <p className="eyebrow text-orange-600 font-bold uppercase tracking-wider">Galerie d&apos;impact</p>
               <h2 className="text-3xl font-black text-slate-900 mt-2">Explorer nos activités en images</h2>
             </div>
-            
-            <div className="flex flex-col gap-2">
-              <label htmlFor="category-select" className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                Filtrer par catégorie
-              </label>
-              <select
-                id="category-select"
-                className="field bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-slate-700 font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all max-w-xs"
-                value={filter}
-                onChange={(event) => setFilter(event.target.value)}
-              >
-                {galleryCategories.map(
-                  (category) => (
-                    <option key={category} value={category}>{category}</option>
-                  ),
-                )}
-              </select>
-            </div>
           </div>
+
+          <section className="gallery-filter-bar" aria-label="Rechercher et filtrer la galerie">
+            <div className="gallery-filter-search">
+              <Search aria-hidden="true" />
+              <label className="sr-only" htmlFor="gallery-search">Rechercher une image ou une catégorie</label>
+              <input id="gallery-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Rechercher une image, une activité ou une catégorie…" />
+            </div>
+            <div className="gallery-filter-options">
+              <span className="gallery-filter-label"><Filter aria-hidden="true" />Filtres</span>
+              <label className="sr-only" htmlFor="category-select">Catégorie</label>
+              <select id="category-select" value={filter} onChange={(event) => setFilter(event.target.value)}>{galleryCategories.map((category) => <option key={category} value={category}>{category === "Tous" ? "Toutes les catégories" : category}</option>)}</select>
+              <label className="sr-only" htmlFor="gallery-sort">Trier les images</label>
+              <select id="gallery-sort" value={sort} onChange={(event) => setSort(event.target.value)}><option value="recent">Plus récentes</option><option value="az">De A à Z</option></select>
+              <button type="button" onClick={() => { setFilter("Tous"); setQuery(""); setSort("recent"); }} className="gallery-reset"><RotateCcw aria-hidden="true" />Réinitialiser</button>
+              <span className="gallery-results" aria-live="polite">{filteredGallery.length} image{filteredGallery.length > 1 ? "s" : ""} trouvée{filteredGallery.length > 1 ? "s" : ""}</span>
+            </div>
+          </section>
 
           {/* Masonry Columns Layout */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -77,7 +79,7 @@ export default function GaleriePage() {
                   return (
                     <button
                       key={item.title}
-                      className={`group relative w-full overflow-hidden rounded-2xl bg-white border border-slate-200/80 shadow-sm transition-[transform,box-shadow,border-color] duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-orange-500/30 text-left focus:outline-none focus:ring-2 focus:ring-orange-500/40 ${aspectStyle}`}
+                      className={`group relative w-full overflow-hidden rounded-xl bg-white border border-slate-200/80 shadow-sm transition-[transform,box-shadow,border-color] duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-orange-500/30 text-left focus:outline-none focus:ring-2 focus:ring-orange-500/40 ${aspectStyle}`}
                       onClick={() => setSelectedImage(item)}
                     >
                       {/* Photo */}
@@ -124,7 +126,7 @@ export default function GaleriePage() {
           </button>
           
           <div className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center gap-4">
-            <div className="relative w-full h-[70vh] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[70vh] rounded-xl overflow-hidden shadow-2xl">
               <Image 
                 src={selectedImage.src} 
                 alt={selectedImage.title} 
@@ -134,7 +136,7 @@ export default function GaleriePage() {
               />
             </div>
             <div className="text-center max-w-2xl px-4">
-              <span className="inline-block bg-orange-500/20 text-orange-400 text-xs font-bold px-3 py-1 rounded-2xl mb-2">
+              <span className="inline-block bg-orange-500/20 text-orange-400 text-xs font-bold px-3 py-1 rounded-xl mb-2">
                 {selectedImage.category}
               </span>
               <h3 className="text-white text-lg font-bold tracking-wide">{selectedImage.title}</h3>

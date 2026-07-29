@@ -88,22 +88,22 @@ export const gallery = [
   {
     category: "Inclusion",
     title: "Intégration et activités partagées au centre",
-    src: "https://lh3.googleusercontent.com/pw/AP1GczOFIo0b24yF0m9VC_WhJV_lBmDerq5NRtot5ZkFh5V3LlLHmjVFsU0EB4AEeTbJgQZjjX5JJhVgT9Na21qqX3EYKy249qTS_qdUAsRxXNs0x9qEr3M=w1200-p-k"
+    src: "/photos/IMG_8175.jpg"
   },
   {
     category: "Ecole",
     title: "Séance d'apprentissage bilingue",
-    src: "https://lh3.googleusercontent.com/pw/AP1GczMabHmEcuHIJnhmxkpbebSaKrUdzY3DGL_dBzHwqLUxLCspLuEN14xFEV_XJudKPmeriyHVk8EJD0wmH1rLCwxRoD3r0xHEEAoKola2GrMxQH45DSQ=w1200-p-k"
+    src: "/photos/IMG_8820.jpg"
   },
   {
     category: "Sensibilisations",
     title: "Échange avec les membres de la communauté",
-    src: "https://lh3.googleusercontent.com/pw/AP1GczOqiZq2D9Tue-4GXPDFIQqbCoQdDH4Y7fsJXYnepKCwggWFI-gsGuocvy2-ygl3EfQWnc3DaExMkLr5T0_8nZMCnfTlH44LVAav5U2VH9zm1G4MMSE=w1200-p-k"
+    src: "/photos/IMG_9232.jpg"
   },
   {
     category: "Langue des signes",
     title: "Cours d'apprentissage des signes",
-    src: "https://lh3.googleusercontent.com/pw/AP1GczOHA7r8PmKO9PiDw7QHLh-RlDHkep52P16PHAy0ZZuzLlM0sed2086sBTB5Md4n0a4l-vFgNJOCHx81ttF1seMnn_NnJg6_TYTTWN3JJ165LTnsfPI=w1200-p-k"
+    src: "/photos/IMG_9229.jpg"
   }
 ];
 
