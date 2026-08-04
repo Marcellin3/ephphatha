@@ -117,7 +117,7 @@ const inspiringWomen = [
   {
     name: "MASIKA Desange",
     role: "Formatrice en coupe et couture",
-    image: "/photos/MASIKA Desange.JPG",
+    image: "/photos/MASIKA Desange.jpg",
     desc: "Formatrice en coupe et couture, elle a su transformer son talent en un moyen de construire un avenir pour sa famille. Son cœur généreux l'a poussée à adopter un enfant, démontrant une force de caractère exemplaire."
   },
   {
