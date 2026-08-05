@@ -144,7 +144,7 @@ const donationContact = {
   director: "Directeur du Centre CESG",
   phone: "+243 997 674 407",
   whatsapp: "243997674407",
-  email: "contact@ephphatha.org",
+  email: "ephphatha@gmail.com",
 };
 
 export default function ProgrammesPage() {

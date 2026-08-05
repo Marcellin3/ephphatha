@@ -169,7 +169,7 @@ export default function AproposPage() {
             {teamMembers.map((member) => (
               <article key={member.name} className="team-card bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col gap-4">
                 <div
-                  className="grid aspect-square w-full place-items-center rounded-xl bg-gradient-to-br from-[#005B96] to-[#138cc4] text-4xl font-black tracking-[-0.08em] text-white shadow-inner"
+                  className="grid aspect-square w-full place-items-center rounded-xl bg-gradient-to-br from-[#005B96] to-[#589361] text-4xl font-black tracking-[-0.08em] text-white shadow-inner"
                   aria-label={`Initiales du poste : ${member.name}`}
                 >
                   <span aria-hidden="true">{member.initials}</span>

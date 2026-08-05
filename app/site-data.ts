@@ -1,10 +1,10 @@
 export const photos = {
   logo: "/photos/Logo.png",
-  assembly: "/photos/IMG_8188.jpg",
+  assembly: "/photos/education.jpg",
   signingWoman: "/photos/IMG_9191.jpg",
   signingMan: "/photos/IMG_9222.jpg",
   facilitator: "/photos/IMG_9223.jpg",
-  expressiveSign: "/photos/IMG_9229.jpg",
+  expressiveSign: "/photos/eglise.jpg",
   communityWoman: "/photos/IMG_9235.jpg",
 };
 
@@ -76,6 +76,13 @@ export const news = [
     image: photos.communityWoman,
     summary: "Les ateliers et classes presentent leurs realisations aux partenaires.",
   },
+  {
+    category: "Formation",
+    title: "Formations des jeunes filles et femmes sourds sur la santé sexuel et de la reproduction,",
+    date: "18 avril 2026",
+    image: photos.communityWoman,
+    summary: "dans cette formation, nous avons mis l'acces sur l'hyginne menstruel et nous avons distribuer des kits hyginique pour 50 sourds.",
+  },
 ];
 
 export const gallery = [
@@ -136,12 +143,16 @@ export const partners = [
     image: "/photos/partenaire2 HEKES EPER.jpg",
   },
   {
-    name: "Christian Aid",
-    image: "/photos/partenaire3 Christian aid.png",
+    name: "Kivu Care",
+    image: "/photos/Logo kivu care.webp",
   },
   {
     name: "WorldShare",
     image: "/photos/partenaire3 WorldShare.jpg",
+  },
+  {
+    name: "unicef",
+    image: "/photos/logo-unicef.jpg",
   },
 ];
 
@@ -149,5 +160,5 @@ export const stats = [
   { value: "1985", label: "Année de fondation" },
   { value: "65+", label: "Professionnels & éducateurs" },
   { value: "100%", label: "Engagement pour l'inclusion" },
-  { value: "4", label: "Domaines d'intervention" },
+  { value: "6", label: "Domaines d'intervention" },
 ];
